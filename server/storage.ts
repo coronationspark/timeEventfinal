@@ -1,38 +1,43 @@
-import { type User, type InsertUser } from "@shared/schema";
-import { randomUUID } from "crypto";
-
-// modify the interface with any CRUD methods
-// you might need
+import { db } from "./db";
+import {
+  packages,
+  inquiries,
+  type Package,
+  type InsertPackage,
+  type InsertInquiry,
+  type Inquiry
+} from "@shared/schema";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  getPackages(category?: string): Promise<Package[]>;
+  getPackage(id: number): Promise<Package | undefined>;
+  createPackage(pkg: InsertPackage): Promise<Package>;
+  createInquiry(inquiry: InsertInquiry): Promise<Inquiry>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-
-  constructor() {
-    this.users = new Map();
+export class DatabaseStorage implements IStorage {
+  async getPackages(category?: string): Promise<Package[]> {
+    if (category) {
+      return await db.select().from(packages).where(eq(packages.category, category));
+    }
+    return await db.select().from(packages);
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+  async getPackage(id: number): Promise<Package | undefined> {
+    const [pkg] = await db.select().from(packages).where(eq(packages.id, id));
+    return pkg;
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+  async createPackage(insertPackage: InsertPackage): Promise<Package> {
+    const [pkg] = await db.insert(packages).values(insertPackage).returning();
+    return pkg;
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async createInquiry(insertInquiry: InsertInquiry): Promise<Inquiry> {
+    const [inquiry] = await db.insert(inquiries).values(insertInquiry).returning();
+    return inquiry;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
