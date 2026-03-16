@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Plane, Phone } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
+import logo from "/logo.png";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -40,8 +41,8 @@ export function Navbar() {
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="bg-primary p-2 rounded-lg text-white transform group-hover:rotate-12 transition-transform duration-300">
-            <Plane className="h-6 w-6" />
+          <div className="bg-white p-0.5 rounded-lg shadow-sm transform group-hover:rotate-6 transition-transform duration-300 flex items-center justify-center">
+            <img src={logo} alt="Time Event" className="h-9 w-auto object-contain" />
           </div>
           <div className="flex flex-col">
             <span className={`font-display font-bold text-xl leading-none ${isScrolled ? "text-secondary" : "text-white"}`}>

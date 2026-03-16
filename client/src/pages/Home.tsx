@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, ShieldCheck, Headphones } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import logo from "/logo.png";
 
 export default function Home() {
   const { data: packages, isLoading } = usePackages();
@@ -73,12 +74,11 @@ export default function Home() {
               className="relative"
             >
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/20 rounded-full z-0" />
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
-                {/* Unsplash image of happy travelers */}
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 flex items-center justify-center bg-white">
                 <img 
-                  src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Travelers" 
-                  className="w-full h-auto"
+                  src={logo}
+                  alt="Time Event Logo" 
+                  className="w-100 h-auto object-contain p-2"
                 />
               </div>
             </motion.div>

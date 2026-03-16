@@ -110,7 +110,7 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
               type="button"
               className="text-left w-full cursor-pointer focus:outline-none"
             >
-              <h3 className="text-xl font-bold text-secondary mb-2 line-clamp-1 group-hover:text-primary transition-colors underline decoration-primary/70">
+              <h3 className="text-xl font-bold text-secondary mb-2 line-clamp-1 group-hover:text-primary transition-colors">
                 {pkg.title}
               </h3>
             </button>
