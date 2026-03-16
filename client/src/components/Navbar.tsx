@@ -42,11 +42,11 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <div className="bg-white p-0.5 rounded-lg shadow-sm transform group-hover:rotate-6 transition-transform duration-300 flex items-center justify-center">
-            <img src={logo} alt="Time Event" className="h-9 w-auto object-contain" />
+            <img src={logo} alt="Time In Event" className="h-9 w-auto object-contain" />
           </div>
           <div className="flex flex-col">
             <span className={`font-display font-bold text-xl leading-none ${isScrolled ? "text-secondary" : "text-white"}`}>
-              TIME EVENT
+              TIME IN EVENT
             </span>
             <span className={`text-xs font-medium tracking-widest ${isScrolled ? "text-muted-foreground" : "text-white/80"}`}>
               TRAVELS
@@ -108,7 +108,7 @@ export function Navbar() {
                 </div>
                 <div className="border-t pt-6">
                   <h4 className="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wider">Contact</h4>
-                  <p className="text-secondary font-medium">Time Event Management</p>
+                  <p className="text-secondary font-medium">Time In Event Management</p>
                   <p className="text-sm text-muted-foreground">+91 98765 43210</p>
                   <p className="text-sm text-muted-foreground">admin@timeinevent.com</p>
                 </div>

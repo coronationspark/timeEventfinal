@@ -192,7 +192,7 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
                     </h4>
                     <div className="space-y-1 text-sm">
                       <p>
-                        <span className="font-medium">Name:</span>Time Event Management
+                        <span className="font-medium">Name:</span>Time In Event Management
                       </p>
                       <p>
                         <span className="font-medium">Email:</span> admin@timeinevent.com

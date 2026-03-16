@@ -12,7 +12,7 @@ export function Footer() {
               <div className="bg-primary p-1.5 rounded text-white">
                 <Plane className="h-5 w-5" />
               </div>
-              <span className="font-display font-bold text-xl">TIME EVENT</span>
+              <span className="font-display font-bold text-xl">TIME IN EVENT</span>
             </div>
             <p className="text-secondary-foreground/70 text-sm leading-relaxed">
               Creating unforgettable memories through curated travel experiences. Your journey begins with us.
@@ -72,7 +72,7 @@ export function Footer() {
           <div>
             <h3 className="font-display font-bold text-lg mb-6 text-white">Admin Details</h3>
             <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-              <p className="text-sm font-medium text-white">Time event Management</p>
+              <p className="text-sm font-medium text-white">Time in event Management</p>
               <p className="text-xs text-secondary-foreground/60 mt-1">Manager & Founder</p>
               <div className="mt-4 pt-4 border-t border-white/10">
                 <p className="text-xs text-secondary-foreground/60 italic">
@@ -85,7 +85,7 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-secondary-foreground/50">
-            © {new Date().getFullYear()} Time Event. All rights reserved.
+            © {new Date().getFullYear()} Time In Event. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs text-secondary-foreground/50">
             <a href="#" className="hover:text-white">Privacy Policy</a>

@@ -11,17 +11,17 @@ export default function About() {
       <div className="pt-32 pb-20 container-custom flex-grow">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-secondary mb-6">About Time Event</h1>
+            <h1 className="text-4xl md:text-5xl font-display font-bold text-secondary mb-6">About Time In Event</h1>
             <p className="text-lg text-muted-foreground">Your trusted partner in creating unforgettable travel memories.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div className="prose prose-lg text-muted-foreground">
               <p className="mb-4">
-                Founded with a passion for exploration, <span className="text-primary font-bold">Time Event</span> is a premier travel agency dedicated to showcasing the beauty of the world to our clients.
+                Founded with a passion for exploration, <span className="text-primary font-bold">Time In Event</span> is a premier travel agency dedicated to showcasing the beauty of the world to our clients.
               </p>
               <p className="mb-4">
-                Under the leadership of <span className="font-semibold text-secondary">Time Event Management</span>, we have curated exceptional travel experiences for thousands of happy travelers. We specialize in both domestic explorations of India's rich heritage and international adventures to exotic destinations.
+                Under the leadership of <span className="font-semibold text-secondary">Time In Event Management</span>, we have curated exceptional travel experiences for thousands of happy travelers. We specialize in both domestic explorations of India's rich heritage and international adventures to exotic destinations.
               </p>
               <p>
                 Our mission is simple: To provide hassle-free, safe, and memorable journeys that fit your budget and exceed your expectations.
@@ -31,7 +31,7 @@ export default function About() {
               <div className="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3" />
               <img 
                 src={logo}
-                alt="Time Event Logo" 
+                alt="Time In Event Logo" 
                 className="relative rounded-2xl shadow-xl z-10 w-64 h-auto object-contain bg-white p-6"
               />
             </div>

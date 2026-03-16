@@ -40,7 +40,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold mb-6 leading-tight">
               Explore the World with <br />
               <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-yellow-400">
-                Time Event
+                Time In Event
               </span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 font-light">
@@ -77,7 +77,7 @@ export default function Home() {
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 flex items-center justify-center bg-white">
                 <img 
                   src={logo}
-                  alt="Time Event Logo" 
+                  alt="Time In Event Logo" 
                   className="w-100 h-auto object-contain p-2"
                 />
               </div>
@@ -90,11 +90,11 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary mb-6">
-                Welcome to <span className="text-primary">Time Event</span>
+                Welcome to <span className="text-primary">Time In Event</span>
               </h2>
               <div className="prose text-muted-foreground mb-8">
                 <p className="mb-4">
-                  At Time Event, we believe that travel is not just about visiting new places, but about collecting experiences that last a lifetime. Managed by Time Event Management, our agency is dedicated to providing you with the most seamless and memorable travel experiences.
+                  At Time In Event, we believe that travel is not just about visiting new places, but about collecting experiences that last a lifetime. Managed by Time In Event Management, our agency is dedicated to providing you with the most seamless and memorable travel experiences.
                 </p>
                 <p>
                   Whether you're looking for a relaxing beach getaway, a thrilling mountain adventure, or a cultural exploration, we have the perfect package for you. Our expert team handles all the details so you can focus on making memories.
