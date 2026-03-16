@@ -72,7 +72,7 @@ export function Navbar() {
           ))}
           <Button 
             className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all hover:-translate-y-0.5"
-            onClick={() => window.location.href = "mailto:admin@timeevent.com"}
+            onClick={() => window.location.href = "mailto:admin@timeinevent.com"}
           >
             <Phone className="w-4 h-4 mr-2" />
             Contact Us
@@ -107,9 +107,9 @@ export function Navbar() {
                 </div>
                 <div className="border-t pt-6">
                   <h4 className="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wider">Contact</h4>
-                  <p className="text-secondary font-medium">Rakesh Das</p>
+                  <p className="text-secondary font-medium">Time Event Management</p>
                   <p className="text-sm text-muted-foreground">+91 98765 43210</p>
-                  <p className="text-sm text-muted-foreground">admin@timeevent.com</p>
+                  <p className="text-sm text-muted-foreground">admin@timeinevent.com</p>
                 </div>
               </div>
             </SheetContent>

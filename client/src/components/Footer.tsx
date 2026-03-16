@@ -63,7 +63,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm text-secondary-foreground/70">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <span>admin@timeevent.com</span>
+                <span>admin@timeinevent.com</span>
               </li>
             </ul>
           </div>
@@ -72,7 +72,7 @@ export function Footer() {
           <div>
             <h3 className="font-display font-bold text-lg mb-6 text-white">Admin Details</h3>
             <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-              <p className="text-sm font-medium text-white">Rakesh Das</p>
+              <p className="text-sm font-medium text-white">Time event Management</p>
               <p className="text-xs text-secondary-foreground/60 mt-1">Manager & Founder</p>
               <div className="mt-4 pt-4 border-t border-white/10">
                 <p className="text-xs text-secondary-foreground/60 italic">

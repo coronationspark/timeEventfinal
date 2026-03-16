@@ -13,6 +13,7 @@ export const packages = pgTable("packages", {
   category: text("category").notNull(), // 'domestic' or 'international'
   location: text("location").notNull(),
   featured: boolean("featured").default(false),
+  itinerary: text("itinerary"), // JSON string of day-wise plan
 });
 
 export const inquiries = pgTable("inquiries", {

@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { CheckCircle2 } from "lucide-react";
+import logo from "/logo.png";
 
 export default function About() {
   return (
@@ -20,19 +21,18 @@ export default function About() {
                 Founded with a passion for exploration, <span className="text-primary font-bold">Time Event</span> is a premier travel agency dedicated to showcasing the beauty of the world to our clients.
               </p>
               <p className="mb-4">
-                Under the leadership of <span className="font-semibold text-secondary">Mr. Rakesh Das</span>, we have curated exceptional travel experiences for thousands of happy travelers. We specialize in both domestic explorations of India's rich heritage and international adventures to exotic destinations.
+                Under the leadership of <span className="font-semibold text-secondary">Time Event Management</span>, we have curated exceptional travel experiences for thousands of happy travelers. We specialize in both domestic explorations of India's rich heritage and international adventures to exotic destinations.
               </p>
               <p>
                 Our mission is simple: To provide hassle-free, safe, and memorable journeys that fit your budget and exceed your expectations.
               </p>
             </div>
-            <div className="relative">
+            <div className="relative flex items-center justify-center">
               <div className="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3" />
-              {/* Using screenshot provided by user or similar office/team image */}
               <img 
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" 
-                alt="Our Team" 
-                className="relative rounded-2xl shadow-xl z-10 w-full h-auto"
+                src={logo}
+                alt="Time Event Logo" 
+                className="relative rounded-2xl shadow-xl z-10 w-64 h-auto object-contain bg-white p-6"
               />
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function About() {
             <div className="inline-flex flex-col sm:flex-row gap-8 bg-white p-8 rounded-2xl shadow-sm border border-border">
               <div className="text-left">
                 <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Email Us</p>
-                <a href="mailto:admin@timeevent.com" className="text-lg font-bold text-primary hover:underline">admin@timeevent.com</a>
+                <a href="mailto:admin@timeinevent.com" className="text-lg font-bold text-primary hover:underline">admin@timeinevent.com</a>
               </div>
               <div className="hidden sm:block w-px bg-border" />
               <div className="text-left">

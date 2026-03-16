@@ -94,7 +94,7 @@ export default function Home() {
               </h2>
               <div className="prose text-muted-foreground mb-8">
                 <p className="mb-4">
-                  At Time Event, we believe that travel is not just about visiting new places, but about collecting experiences that last a lifetime. Managed by Rakesh Das, our agency is dedicated to providing you with the most seamless and memorable travel experiences.
+                  At Time Event, we believe that travel is not just about visiting new places, but about collecting experiences that last a lifetime. Managed by Time Event Management, our agency is dedicated to providing you with the most seamless and memorable travel experiences.
                 </p>
                 <p>
                   Whether you're looking for a relaxing beach getaway, a thrilling mountain adventure, or a cultural exploration, we have the perfect package for you. Our expert team handles all the details so you can focus on making memories.

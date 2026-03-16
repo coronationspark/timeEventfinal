@@ -14,6 +14,7 @@ export interface Package {
   category: 'domestic' | 'international';
   location: string;
   featured: boolean;
+  itinerary?: string | null;
 }
 
 export function usePackages(category?: 'domestic' | 'international') {

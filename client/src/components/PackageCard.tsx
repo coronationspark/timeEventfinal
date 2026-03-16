@@ -76,6 +76,9 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
     return `https://images.unsplash.com/${url}`;
   };
 
+  const parsedItinerary: Array<{ day?: number; title?: string; plan?: string; desc?: string }> =
+    pkg.itinerary ? JSON.parse(pkg.itinerary) : [];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -101,10 +104,47 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
 
       {/* Content */}
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold text-secondary mb-2 line-clamp-1 group-hover:text-primary transition-colors">
-          {pkg.title}
-        </h3>
-        
+        <Dialog>
+          <DialogTrigger asChild>
+            <button
+              type="button"
+              className="text-left w-full cursor-pointer focus:outline-none"
+            >
+              <h3 className="text-xl font-bold text-secondary mb-2 line-clamp-1 group-hover:text-primary transition-colors underline decoration-primary/70">
+                {pkg.title}
+              </h3>
+            </button>
+          </DialogTrigger>
+          <DialogContent className="max-w-3xl h-[80vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>{pkg.title} - Itinerary</DialogTitle>
+              <DialogDescription>Day-wise plan for this tour.</DialogDescription>
+            </DialogHeader>
+            {parsedItinerary.length > 0 ? (
+              <div className="mt-4 space-y-4">
+                {parsedItinerary.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="border border-border rounded-lg p-4 bg-muted/30"
+                  >
+                    <p className="font-semibold text-secondary mb-1">
+                      {item.day ? `Day ${item.day}` : item.title || `Day ${idx + 1}`}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {item.plan || item.desc || (item as any).activity}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="mt-4 text-sm text-muted-foreground">
+                Detailed itinerary for this tour is coming soon. Please contact our admin
+                for the latest day-wise plan.
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
+
         <p className="text-muted-foreground text-sm mb-6 line-clamp-2 flex-grow">
           {pkg.description}
         </p>
@@ -121,100 +161,110 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
             </div>
           </div>
 
-          <div className="flex items-center justify-between pt-2">
-            <div>
-              <p className="text-xs text-muted-foreground uppercase tracking-wide">Starting From</p>
+          <div className="flex items-center justify-between pt-2 gap-3">
+            <div className="flex flex-col">
+              <p className="text-xs text-muted-foreground uppercase tracking-wide">
+                Starting From
+              </p>
               <p className="text-2xl font-bold text-secondary">
                 ₹{pkg.price.toLocaleString()}
               </p>
             </div>
 
-            <Dialog open={open} onOpenChange={setOpen}>
-              <DialogTrigger asChild>
-                <Button className="bg-primary hover:bg-primary/90 text-white rounded-xl px-6">
-                  Book Now
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-md">
-                <DialogHeader>
-                  <DialogTitle>Book {pkg.title}</DialogTitle>
-                  <DialogDescription>
-                    Fill out the form below or contact our admin directly.
-                  </DialogDescription>
-                </DialogHeader>
-                
-                <div className="bg-muted/50 p-4 rounded-lg mb-4 border border-border">
-                  <h4 className="font-semibold text-secondary text-sm mb-2">Admin Contact Details</h4>
-                  <div className="space-y-1 text-sm">
-                    <p><span className="font-medium">Name:</span> Rakesh Das</p>
-                    <p><span className="font-medium">Email:</span> admin@timeevent.com</p>
-                    <p><span className="font-medium">WhatsApp:</span> +91 98765 43210</p>
-                  </div>
-                </div>
-
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Name</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Your full name" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <div className="grid grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Email</FormLabel>
-                            <FormControl>
-                              <Input placeholder="you@example.com" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="phone"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Phone</FormLabel>
-                            <FormControl>
-                              <Input placeholder="10-digit number" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+            <div className="flex items-center gap-2">
+              <Dialog open={open} onOpenChange={setOpen}>
+                <DialogTrigger asChild>
+                  <Button className="bg-primary hover:bg-primary/90 text-white rounded-xl px-6">
+                    Book Now
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md">
+                  <DialogHeader>
+                    <DialogTitle>Book {pkg.title}</DialogTitle>
+                    <DialogDescription>
+                      Fill out the form below or contact our admin directly.
+                    </DialogDescription>
+                  </DialogHeader>
+                  
+                  <div className="bg-muted/50 p-4 rounded-lg mb-4 border border-border">
+                    <h4 className="font-semibold text-secondary text-sm mb-2">
+                      Admin Contact Details
+                    </h4>
+                    <div className="space-y-1 text-sm">
+                      <p>
+                        <span className="font-medium">Name:</span>Time Event Management
+                      </p>
+                      <p>
+                        <span className="font-medium">Email:</span> admin@timeinevent.com
+                      </p>
+            
                     </div>
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Message (Optional)</FormLabel>
-                          <FormControl>
-                            <Textarea placeholder="Any specific requirements?" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <Button type="submit" className="w-full" disabled={createInquiry.isPending}>
-                      {createInquiry.isPending ? "Sending..." : "Submit Inquiry"}
-                    </Button>
-                  </form>
-                </Form>
-              </DialogContent>
-            </Dialog>
+                  </div>
+
+                  <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                      <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Name</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Your full name" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <div className="grid grid-cols-2 gap-4">
+                        <FormField
+                          control={form.control}
+                          name="email"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Email</FormLabel>
+                              <FormControl>
+                                <Input placeholder="you@example.com" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="phone"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Phone</FormLabel>
+                              <FormControl>
+                                <Input placeholder="10-digit number" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                      <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Message (Optional)</FormLabel>
+                            <FormControl>
+                              <Textarea placeholder="Any specific requirements?" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <Button type="submit" className="w-full" disabled={createInquiry.isPending}>
+                        {createInquiry.isPending ? "Sending..." : "Submit Inquiry"}
+                      </Button>
+                    </form>
+                  </Form>
+                </DialogContent>
+              </Dialog>
+            </div>
           </div>
         </div>
       </div>
