@@ -68,7 +68,7 @@ export default function About() {
               <div className="hidden sm:block w-px bg-border" />
               <div className="text-left">
                 <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Call / WhatsApp</p>
-                <a href="tel:+919876543210" className="text-lg font-bold text-primary hover:underline">+91 98765 43210</a>
+                <a href="tel:+917363029492" className="text-lg font-bold text-primary hover:underline">+91 7363029492</a>
               </div>
             </div>
           </div>

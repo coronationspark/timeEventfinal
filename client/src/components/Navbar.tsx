@@ -109,7 +109,7 @@ export function Navbar() {
                 <div className="border-t pt-6">
                   <h4 className="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wider">Contact</h4>
                   <p className="text-secondary font-medium">Time In Event Management</p>
-                  <p className="text-sm text-muted-foreground">+91 98765 43210</p>
+                  <p className="text-sm text-muted-foreground">+91 7363029492</p>
                   <p className="text-sm text-muted-foreground">admin@timeinevent.com</p>
                 </div>
               </div>

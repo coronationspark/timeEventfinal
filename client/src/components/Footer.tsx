@@ -55,11 +55,15 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-secondary-foreground/70">
                 <MapPin className="w-5 h-5 text-primary shrink-0" />
-                <span>123 Travel Lane, Adventure City, India - 751024</span>
+                <div className="flex flex-col">
+                  <span>Rajnagar,kholapota,Basirhat</span>
+                  <span>North 24 Parganas, 743428</span>
+                  <span>West Bengal, India</span>
+                </div>
               </li>
               <li className="flex items-center gap-3 text-sm text-secondary-foreground/70">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 7363029492</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-secondary-foreground/70">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
