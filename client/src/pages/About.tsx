@@ -60,15 +60,36 @@ export default function About() {
             <h2 className="text-2xl font-bold text-secondary mb-6">Get in Touch</h2>
             <p className="text-muted-foreground mb-8">Ready to plan your next adventure? Contact our team today.</p>
             
-            <div className="inline-flex flex-col sm:flex-row gap-8 bg-white p-8 rounded-2xl shadow-sm border border-border">
+            <div className="mx-auto w-full max-w-2xl grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-start gap-6 bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-border text-left">
               <div className="text-left">
                 <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Email Us</p>
-                <a href="mailto:admin@timeinevent.com" className="text-lg font-bold text-primary hover:underline">admin@timeinevent.com</a>
+                <a
+                  href="mailto:admin@timeinevent.com"
+                  className="text-base sm:text-lg font-bold text-primary hover:underline break-all"
+                >
+                  admin@timeinevent.com
+                </a>
               </div>
-              <div className="hidden sm:block w-px bg-border" />
+              <div className="hidden sm:block w-px bg-border self-stretch" />
               <div className="text-left">
                 <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Call / WhatsApp</p>
-                <a href="tel:+917363029492" className="text-lg font-bold text-primary hover:underline">+91 7363029492</a>
+                <p className="text-base sm:text-lg font-bold text-primary mb-3">+91 7363029492</p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href="tel:+917363029492"
+                    className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary/90 transition-colors min-w-[110px]"
+                  >
+                    Call
+                  </a>
+                  <a
+                    href="https://wa.me/917363029492?text=Hi%20I%20want%20to%20book%20a%20tour"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-md border border-primary px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/10 transition-colors min-w-[110px]"
+                  >
+                    WhatsApp
+                  </a>
+                </div>
               </div>
             </div>
           </div>

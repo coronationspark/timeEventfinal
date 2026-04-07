@@ -10,6 +10,13 @@ import logo from "/logo.png";
 
 export default function Home() {
   const { data: packages, isLoading } = usePackages();
+  const offerItems = [
+    "Upcoming Tour Offers",
+    "Ongoing Deals - Save up to 20%",
+    "Kashmir Summer Departures Open",
+    "Himachal Special Group Batches",
+    "Call / WhatsApp: +91 7363029492",
+  ];
   
   // Filter featured packages or take first 3
   const featuredPackages = packages?.filter(p => p.featured).slice(0, 3) || packages?.slice(0, 3) || [];
@@ -17,7 +24,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
@@ -60,6 +67,18 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
+
+        <div className="absolute bottom-0 left-0 right-0 z-10">
+          <div className="offer-ticker border-t border-white/25 bg-black/35 backdrop-blur-sm">
+            <div className="offer-ticker-track">
+              {[...offerItems, ...offerItems].map((item, idx) => (
+                <span key={`offer-${idx}`} className="offer-ticker-item text-white">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Welcome Section */}
@@ -74,11 +93,11 @@ export default function Home() {
               className="relative"
             >
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/20 rounded-full z-0" />
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 flex items-center justify-center bg-white">
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 flex items-center justify-center bg-white max-w-[500px] mx-auto">
                 <img 
                   src={logo}
                   alt="Time In Event Logo" 
-                  className="w-100 h-auto object-contain p-2"
+                  className="w-56 sm:w-64 md:w-72 h-auto object-contain p-2 mx-auto"
                 />
               </div>
             </motion.div>

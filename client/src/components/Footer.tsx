@@ -35,16 +35,36 @@ export function Footer() {
             <h3 className="font-display font-bold text-lg mb-6 text-white">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm">Home</Link>
+                <Link
+                  href="/"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm"
+                >
+                  Home
+                </Link>
               </li>
               <li>
-                <Link href="/packages/domestic" className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm">Domestic Packages</Link>
+                <Link
+                  href="/packages/domestic"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm"
+                >
+                  Domestic Packages
+                </Link>
               </li>
               <li>
-                <Link href="/packages/international" className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm">International Packages</Link>
+                <Link
+                  href="/packages/international"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm"
+                >
+                  International Packages
+                </Link>
               </li>
               <li>
-                <Link href="/about" className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm">About Us</Link>
+                <Link
+                  href="/about"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm"
+                >
+                  About Us
+                </Link>
               </li>
             </ul>
           </div>

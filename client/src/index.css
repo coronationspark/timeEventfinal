@@ -92,3 +92,59 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes offer-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.offer-ticker {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.offer-ticker-track {
+  display: inline-flex;
+  align-items: center;
+  min-width: max-content;
+  animation: offer-marquee 24s linear infinite;
+}
+
+.offer-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  color: hsl(var(--secondary));
+  letter-spacing: 0.01em;
+  padding: 0.65rem 1rem;
+}
+
+.offer-ticker-item::after {
+  content: "|";
+  margin-left: 1rem;
+  opacity: 0.45;
+}
+
+.offer-ticker:hover .offer-ticker-track {
+  animation-play-state: paused;
+}
+
+@media (min-width: 640px) {
+  .offer-ticker-item {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 0.7rem 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-ticker-track {
+    animation: none;
+  }
+}
