@@ -19,6 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useCreateInquiry } from "@/hooks/use-packages";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
+import { ImageCarousel } from "@/components/ImageCarousel";
 
 interface PackageCardProps {
   pkg: Package;
@@ -70,11 +71,21 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
     );
   };
 
-  // Function to get image URL (placeholder fallback)
   const getImageUrl = (url: string) => {
     if (url.startsWith("http")) return url;
     return `https://images.unsplash.com/${url}`;
   };
+
+  const imageList: string[] = (() => {
+    if (pkg.images) {
+      try {
+        const parsed = JSON.parse(pkg.images);
+        if (Array.isArray(parsed) && parsed.length > 0)
+          return parsed.map(getImageUrl);
+      } catch {}
+    }
+    return [getImageUrl(pkg.image)];
+  })();
 
   const parsedItinerary: Array<{ day?: number; title?: string; plan?: string; desc?: string }> =
     pkg.itinerary ? JSON.parse(pkg.itinerary) : [];
@@ -86,15 +97,11 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group relative bg-white rounded-2xl overflow-hidden shadow-lg border border-border/50 hover:shadow-xl hover:border-primary/20 transition-all duration-300 flex flex-col h-full"
     >
-      {/* Image Container */}
+      {/* Image Carousel */}
       <div className="relative h-64 overflow-hidden">
-        <img
-          src={getImageUrl(pkg.image)}
-          alt={pkg.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
-        <div className="absolute bottom-4 left-4 text-white">
+        <ImageCarousel images={imageList} alt={pkg.title} />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 pointer-events-none" />
+        <div className="absolute bottom-8 left-4 text-white z-10">
           <div className="flex items-center text-xs font-medium bg-primary/90 px-2 py-1 rounded mb-2 w-fit backdrop-blur-sm">
             <MapPin className="w-3 h-3 mr-1" />
             {pkg.location}

@@ -15,6 +15,7 @@ export interface Package {
   location: string;
   featured: boolean;
   itinerary?: string | null;
+  images?: string | null; // JSON array of image URLs
 }
 
 export function usePackages(category?: 'domestic' | 'international') {

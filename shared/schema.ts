@@ -14,6 +14,7 @@ export const packages = pgTable("packages", {
   location: text("location").notNull(),
   featured: boolean("featured").default(false),
   itinerary: text("itinerary"), // JSON string of day-wise plan
+  images: text("images"), // JSON array of image URLs for carousel
 });
 
 export const inquiries = pgTable("inquiries", {
